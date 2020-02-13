@@ -1,5 +1,5 @@
 {
-  "main.css": "/Rock-Paper-Scissors-Game/static/css/main.f688c9b5.chunk.css",
+  "main.css": "/Rock-Paper-Scissors-Game/static/css/main.56abf165.chunk.css",
   "main.js": "/Rock-Paper-Scissors-Game/static/js/main.3242131e.chunk.js",
   "main.js.map": "/Rock-Paper-Scissors-Game/static/js/main.3242131e.chunk.js.map",
   "runtime~main.js": "/Rock-Paper-Scissors-Game/static/js/runtime~main.6497de0f.js",
@@ -7,9 +7,9 @@
   "static/js/2.bc8a9427.chunk.js": "/Rock-Paper-Scissors-Game/static/js/2.bc8a9427.chunk.js",
   "static/js/2.bc8a9427.chunk.js.map": "/Rock-Paper-Scissors-Game/static/js/2.bc8a9427.chunk.js.map",
   "index.html": "/Rock-Paper-Scissors-Game/index.html",
-  "precache-manifest.bb6b2a3906351663bf12feff6ddaa8c3.js": "/Rock-Paper-Scissors-Game/precache-manifest.bb6b2a3906351663bf12feff6ddaa8c3.js",
+  "precache-manifest.b88fb5c7cf36c24b2122a86aed11e386.js": "/Rock-Paper-Scissors-Game/precache-manifest.b88fb5c7cf36c24b2122a86aed11e386.js",
   "service-worker.js": "/Rock-Paper-Scissors-Game/service-worker.js",
-  "static/css/main.f688c9b5.chunk.css.map": "/Rock-Paper-Scissors-Game/static/css/main.f688c9b5.chunk.css.map",
+  "static/css/main.56abf165.chunk.css.map": "/Rock-Paper-Scissors-Game/static/css/main.56abf165.chunk.css.map",
   "static/media/Result.scss": "/Rock-Paper-Scissors-Game/static/media/bg-triangle.1fd44bdf.svg",
   "static/media/icon-close.svg": "/Rock-Paper-Scissors-Game/static/media/icon-close.919ab92a.svg",
   "static/media/icon-paper.svg": "/Rock-Paper-Scissors-Game/static/media/icon-paper.69a8c2e9.svg",

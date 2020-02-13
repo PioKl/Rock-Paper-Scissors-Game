@@ -1,0 +1,269 @@
+/*
+### Primary
+- Scissors Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%)
+- Paper Gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%)
+- Rock Gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%)
+- Lizard Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%)
+- Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%)
+*/
+
+//Pozbawienie przy przyciskach wykropkowanego obramowania w firefox
+button::-moz-focus-inner {
+  border: 0;
+}
+
+//pozbawienie niebieskiego obramowania przycisku w chrome
+/* button:focus {
+  outline: 0 !important;
+} */
+//pozbawienie niebieskiego obramowania przycisku i innych rzeczy w chrome
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+/* COLORS */
+$darkText: hsl(229, 25%, 31%);
+$scoreText:hsl(229, 64%, 46%);
+$headerOutline: hsl(217, 16%, 45%);
+
+$scissorsGradientTop: hsl(39, 89%, 49%);
+$scissorsGradientBottom: hsl(40, 84%, 53%);
+
+$paperGradientTop: hsl(230, 89%, 62%);
+$paperGradientBottom: hsl(230, 89%, 65%);
+
+$rockGradientTop: hsl(349, 71%, 52%);
+$rockGradientBottom:hsl(349, 70%, 56%);
+
+$backgroundGradientTop: hsl(214, 47%, 23%);
+$backgroundGradientBottom: hsl(237, 49%, 15%);
+
+
+@mixin elementBorder() {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 20px;
+  display: flex;
+  box-shadow: inset 0px -8px 0px 2px rgba(0, 0, 0, .5);
+}
+
+@mixin gradientBackground($gradientTopColor, $gradientBottomColor) {
+  background-image: linear-gradient($gradientTopColor, $gradientBottomColor);
+}
+
+@mixin marginPaddingZero() {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+  @include gradientBackground($backgroundGradientTop, $backgroundGradientBottom);
+}
+
+body {
+  //filter: drop-shadow(8px 8px 10px gray); - ciekawy efekt, wszystkie elementy beda mialy poswiate
+  height: 100%;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  color: white;
+  overflow: auto;
+}
+
+//Google Translate White Space Fix
+/* .goog-te-spinner-pos+div {
+  height: auto !important;
+} */
+
+//moze to rozwiaze problem google translate
+#root {
+  height: 100%;
+}
+
+
+.header {
+  width: 50%;
+  margin: 30px 0;
+  grid-area: header;
+  display: grid;
+  justify-self: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "title points";
+  border: 3px solid $headerOutline;
+  border-radius: 1rem;
+  font-weight: 700;
+  padding: 20px;
+  padding-top: 10px;
+}
+
+.title {
+  grid-area: title;
+  justify-self: left;
+  align-self: center;
+
+  .logoImg {
+    height: calc(20px + 6vw);
+  }
+}
+
+.pointsContainer {
+  grid-area: points;
+  border-radius: 5px;
+  justify-self: right;
+  padding: 10px 40px 0 40px;
+  background-color: #fff;
+  font-weight: 600;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.points-title,
+.points-count {
+  @include marginPaddingZero();
+}
+
+.points-title {
+  color: $scoreText;
+  font-size: calc(8px + .4vw);
+}
+
+.points-count {
+  text-align: center;
+  color: $darkText;
+  font-size: calc(10px + 5vw);
+}
+
+.chooseOption {
+  grid-area: chooseOption;
+  background: url(../images/bg-triangle.svg) no-repeat center;
+  //padding-top: calc(1px + 1vw);
+}
+
+.paperElement,
+.rockElement,
+.scissorsElement {
+  @include elementBorder();
+}
+
+
+
+.paperElement {
+  @include gradientBackground($paperGradientTop, $paperGradientBottom);
+  position: relative;
+  left: 50%;
+  transform: translateX(-150%);
+}
+
+.rockElement {
+  @include gradientBackground($rockGradientTop, $rockGradientBottom);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%) translateY(-25%);
+}
+
+.scissorsElement {
+  @include gradientBackground($scissorsGradientTop, $scissorsGradientBottom);
+  position: relative;
+  left: 50%;
+  transform: translateX(50%) translateY(-100%);
+}
+
+.chooseElementButton {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 0px;
+  margin: auto;
+  outline: none;
+  box-shadow: inset 0px 8px 0px -2px rgba(0, 0, 0, .1);
+
+  &:hover {
+    box-shadow: inset 0px 0px 15px rgba(0, 0, 0, .5);
+  }
+
+  &:focus {
+    box-shadow: inset 0px 0px 15px rgba(0, 0, 0, .9);
+  }
+}
+
+.rulesContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 80px;
+}
+
+.attribution {
+  padding-top: 20px;
+  text-align: center;
+
+  a:hover {
+    color: white;
+  }
+}
+
+
+/*=============================
+          Media Queries 
+ ============================*/
+@media only screen and (max-width : 768px) {
+
+
+  .chooseOption {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+
+  .paperElement {
+    transform: translateX(-160%) translateY(-40%);
+  }
+
+  .scissorsElement {
+    transform: translateX(60%) translateY(-140%);
+  }
+
+  .rockElement {
+    transform: translateX(-50%) translateY(-12%);
+  }
+
+  .paperElement,
+  .rockElement,
+  .scissorsElement {
+    width: calc(55px + 1vw);
+    height: calc(55px + 1vw);
+  }
+
+  .paperImg,
+  .rockImg,
+  .scissorsImg {
+    height: calc(30px + 1vw);
+  }
+
+  .chooseElementButton {
+    width: calc(55px + 1vw);
+    height: calc(55px + 1vw);
+  }
+
+  .pointsContainer {
+    padding: 0px 20px 0 20px;
+  }
+
+  .rulesContainer {
+    justify-content: center;
+    margin-right: 0px;
+  }
+
+  .attribution {
+    padding-bottom: 5px;
+  }
+}

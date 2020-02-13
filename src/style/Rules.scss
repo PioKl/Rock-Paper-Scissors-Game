@@ -1,0 +1,105 @@
+@import "./App.scss";
+
+.rulesOpenButton {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding: 10px 40px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 9px;
+    outline: none;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover {
+        background-color: white;
+        color: $darkText;
+    }
+
+}
+
+.rulesMenu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    padding: 20px 30px;
+    background-color: white;
+    border-radius: 1%;
+    color: $darkText;
+    display: flex;
+    flex-flow: column;
+    animation: showRules .5s linear;
+
+    .rulesCloseButton {
+        cursor: pointer;
+    }
+}
+
+@keyframes showRules {
+
+    0% {
+
+        top: 150%;
+    }
+
+    50% {
+        top: 100%;
+    }
+
+    100% {
+        top: 50%;
+    }
+}
+
+@keyframes closeRules {
+
+    0% {
+        .rulesMenu {
+            top: 50%;
+        }
+
+    }
+
+    50% {
+        .rulesMenu {
+            top: 100%;
+        }
+    }
+
+    100% {
+        .rulesMenu {
+            top: 150%;
+        }
+    }
+}
+
+.rulesTitle {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+
+    h1 {
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+        font-size: calc(10px + 2vw);
+    }
+
+    button {
+        background-color: transparent;
+        border: 0px;
+    }
+}
+
+.rulesImgContainer {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width : 768px) {
+    .rulesImg {
+        height: calc(180px + 9vw);
+    }
+}

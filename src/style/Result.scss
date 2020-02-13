@@ -1,0 +1,298 @@
+@import "./App.scss";
+@import "./Rules.scss";
+
+@mixin flexCenter {
+    display: flex;
+    /* align horizontal */
+    justify-content: center;
+    /* align vertical */
+    align-items: center;
+    flex-flow: column;
+}
+
+@mixin size200 {
+    width: 200px;
+    height: 200px;
+}
+
+@mixin size150 {
+    width: 150px;
+    height: 150px;
+}
+
+.result {
+    grid-area: result;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "playerChoice restartGame computerChoice";
+    padding: 40px 0;
+}
+
+.pickedTitle {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.playerChoice {
+    grid-area: playerChoice;
+}
+
+.restartGame {
+    grid-area: restartGame;
+}
+
+.computerChoice {
+    grid-area: computerChoice;
+}
+
+.playerChoice,
+.computerChoice {
+
+    .paperElement,
+    .rockElement,
+    .scissorsElement {
+        //box-shadow: none;
+        margin: 0 auto;
+        position: default;
+        left: 0%;
+        transform: translateX(0%) translateY(0%);
+        @include size200();
+
+        //to before and after center
+        /*         display: flex;
+        align-items: center;
+        justify-content: center; */
+        /////////////////////////
+
+        .choosedElement {
+            @extend .chooseElementButton;
+            @include size150();
+            cursor: auto;
+            @include flexCenter();
+
+            .paperImg,
+            .rockImg,
+            .scissorsImg {
+                height: calc(50px + 1vw);
+            }
+        }
+    }
+
+    .winImpulse {
+        ::before {
+            width: 420px;
+            height: 420px;
+            z-index: -2;
+            animation: winImpulse 1s infinite;
+        }
+
+        ::after {
+            width: 320px;
+            height: 320px;
+            z-index: -1;
+            animation: winImpulse 1s infinite;
+        }
+
+
+        ::before {
+            //display: inline;
+            content: "";
+            background: rgba(255, 255, 255, 0.048);
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        ::after {
+            //display: inline;
+            content: "";
+            background: rgba(255, 255, 255, 0.048);
+            border-radius: 50%;
+            position: absolute;
+        }
+    }
+
+    @keyframes winImpulse {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(.8);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+}
+
+.loadingComputerChooseImpulse {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.568);
+    margin: 0 auto;
+    @include flexCenter();
+    animation: loadingAnimation 3s linear;
+    animation-fill-mode: forwards;
+
+    .loadingComputerChooseImpulse2 {
+        @include size150();
+        border-radius: 50%;
+        margin: auto;
+        background-color: grey;
+        animation: loadingAnimation2 3s linear;
+        animation-fill-mode: forwards;
+    }
+}
+
+
+@keyframes loadingAnimation {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(.5);
+    }
+
+    100% {
+        transform: scale(1);
+        visibility: hidden;
+    }
+
+}
+
+@keyframes loadingAnimation2 {
+
+    0% {
+        opacity: 1;
+        background-color: black;
+    }
+
+    10% {
+        background-color: #fff;
+        opacity: 0;
+    }
+
+    20% {
+        background-color: black;
+        opacity: 1;
+    }
+
+    30% {
+        background-color: #fff;
+        opacity: 0;
+    }
+
+    40% {
+        background-color: black;
+        opacity: 1;
+    }
+
+    50% {
+        background-color: #fff;
+        opacity: 0;
+    }
+
+    75% {
+        background-color: black;
+        opacity: 1;
+    }
+
+    100% {
+        background-color: #fff;
+        opacity: 1;
+        visibility: hidden;
+    }
+
+}
+
+.restartGame {
+    @include flexCenter();
+
+    .buttonRestart {
+        @extend .rulesOpenButton;
+        padding: 30px 40px;
+        letter-spacing: 5px;
+    }
+}
+
+
+@media only screen and (max-width : 768px) {
+
+    .result {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "playerChoice computerChoice""restartGame restartGame";
+    }
+
+    .playerChoice,
+    .computerChoice {
+
+        display: flex;
+        flex-flow: column;
+        flex-direction: column-reverse;
+
+        .pickedTitle {
+            padding-top: 1rem;
+            padding-bottom: 0px;
+            font-size: calc(8px + 2.9vw);
+        }
+
+        .paperElement,
+        .rockElement,
+        .scissorsElement {
+            width: calc(40px + 20vw);
+            height: calc(40px + 20vw);
+
+            .choosedElement {
+                width: calc(40px + 14vw);
+                height: calc(40px + 14vw);
+
+                .paperImg,
+                .rockImg,
+                .scissorsImg {
+                    height: calc(30px + 3.5vw);
+                }
+            }
+        }
+
+        .winImpulse {
+            ::before {
+                width: calc(110px + 23vw);
+                height: calc(110px + 23vw);
+            }
+
+            ::after {
+                width: calc(130px + 25vw);
+                height: calc(130px + 25vw);
+            }
+        }
+
+
+    }
+
+    .restartGame {
+        .currencyOfGame {
+            font-size: calc(8px + 2.9vw);
+        }
+
+        .buttonRestart {
+            padding: 20px 20px;
+            letter-spacing: 5px;
+            font-size: calc(8px + 1vw);
+        }
+    }
+
+    .loadingComputerChooseImpulse {
+        width: calc(80px + 20vw);
+        height: calc(80px + 20vw);
+
+        .loadingComputerChooseImpulse2 {
+            width: calc(40px + 14vw);
+            height: calc(40px + 14vw);
+        }
+    }
+}

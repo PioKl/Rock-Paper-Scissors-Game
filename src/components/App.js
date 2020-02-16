@@ -11,7 +11,11 @@ import logo from '../images/logo.svg';
 class App extends Component {
 
 
-
+  /* ====================================================
+  Style Grid, ktore beda sie roznily dla Glownego Okna, 
+  czyli wyboru r/p/s i result, czyli tego co uzytkownik 
+  zobaczy po wyborze r/p/s 
+  ========================================================*/
   gridTemplateAreasChooseOption = {
     display: "grid",
     gridTemplateColumns: "1fr",
@@ -24,6 +28,7 @@ class App extends Component {
     gridTemplateRows: "auto",
     gridTemplateAreas: "'header''result''rulesContainer'",
   }
+
   choicesForComputer = ['paper', 'rock', 'scissors'];
   time = 3000;
   points = 0;
@@ -31,12 +36,13 @@ class App extends Component {
   state = {
     computerChoice: '',
     currency: '',
-    gameOn: false,
+    gameOn: false, //na poczatku jest false, po wyborze r/p/s zmienia sie na true zeby przejsc do widoku Result
     restart: false,
     rules: false,
   }
 
 
+  //Po kliknieciu na divy z ikonkami rozpoczyna sie metoda, ktora sprawdzi wybor gracza z wyborem komputera, ktory zostanie wylosowany z tablicy. Warunki porownuja te wybory i na ich podstawie powstaje decyzja kto wygral. Ustawienie stanu currency i computerChoice jest opoznione o 3s w celu "wirtualizacji myslenia komputera", aby bylo ukazane, ze przez ten czas komputer zastanawia sie nad wyborem
   handlePlayerChoice = (e) => {
     e.preventDefault();
     let computerChoice = this.choicesForComputer[Math.floor(Math.random() * this.choicesForComputer.length)];
@@ -132,7 +138,7 @@ class App extends Component {
     }
   }
 
-
+  /*Przcysik restart, ktory po kliknieciu zmieni stany, zeby mozna bylo zaczac gre od poczatku  */
   handleRestart = (e) => {
     e.preventDefault();
     if (this.state.restart === false) {
@@ -144,9 +150,10 @@ class App extends Component {
     }
   }
 
+  /*Metoda uruchamiajaca sie jesli kliknie w obrebie diva App */
   handleCloseRulesOnAppClick = (rulesFromRulesState) => { //musze miec wartosc rules z Rules
     this.setState({
-      rules: !this.state.rules,
+      rules: !this.state.rules, //zmiana na przeciwny stan
     })
     if (rulesFromRulesState === false) { //jesli sa wylaczone rules z Rules to i tu wylacz, zeby jak zapamieta klikniecie na true, zmienil na false, bo inaczej dwa razy klikac bede musial, zeby wejsc
       this.setState({
@@ -198,8 +205,8 @@ class App extends Component {
           <Rules rulesApp={this.state.rules} handleCloseRulesOnAppClick={this.handleCloseRulesOnAppClick} />
         </div>
         <div class="attribution">
-          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>.
-          Coded by <a href="https://github.com/PioKl" target="_blank" rel="noopener noreferrer">Piotr Kłosowski</a>.
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer" className="attributionLink">Frontend Mentor</a>.
+          Coded by <a href="https://github.com/PioKl" target="_blank" rel="noopener noreferrer" className="attributionLink">Piotr Kłosowski</a>.
         </div>
         {/* </div> */}
       </>

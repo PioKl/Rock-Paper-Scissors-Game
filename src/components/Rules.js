@@ -17,7 +17,7 @@ class Rules extends Component {
         this.setState({
             rules: !this.state.rules,
         })
-        this.props.handleCloseRulesOnAppClick(this.state.rules);//przekazanie statnu rules do metody w App
+        this.props.handleCloseRulesOnAppClick(this.state.rules);//przekazanie stanu rules do metody w App
     }
 
     displayRules = () => { //wyświetlenie zasad jesli rules sa true, czyli kliknieto na przycisk
@@ -56,9 +56,6 @@ class Rules extends Component {
     }
 
     render() {
-        console.log(this.props.rulesApp)
-        console.log(this.state.rules)
-        console.log('----------------------------------')
         return (
             <>
 
@@ -66,8 +63,6 @@ class Rules extends Component {
                 <button className="rulesOpenButton" onClick={this.handleRules} style={{ backgroundColor: (this.state.rules ? 'white' : null), color: (this.state.rules ? 'hsl(229, 25%, 31%)' : null) }} value='rules'>Rules</button>
                 {this.displayRules()}
                 {this.state.rules ? <style>{'body { background-color: background-color: rgba(0, 0, 0, .3) } .App {opacity: .3}'}</style> : null}
-                {/* {this.state.rules ? <style>{'body { background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)) }'}</style> : null} */}
-                {/*      {this.state.rules ? <style>{'#container { background-color: rgba(0, 0, 0, .3); padding-bottom:39px } .App {opacity: .3}'}</style> : null} */}
             </>
 
         );

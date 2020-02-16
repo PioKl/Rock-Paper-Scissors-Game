@@ -12,10 +12,6 @@ button::-moz-focus-inner {
   border: 0;
 }
 
-//pozbawienie niebieskiego obramowania przycisku w chrome
-/* button:focus {
-  outline: 0 !important;
-} */
 //pozbawienie niebieskiego obramowania przycisku i innych rzeczy w chrome
 input,
 textarea,
@@ -43,7 +39,10 @@ $rockGradientBottom:hsl(349, 70%, 56%);
 $backgroundGradientTop: hsl(214, 47%, 23%);
 $backgroundGradientBottom: hsl(237, 49%, 15%);
 
-
+/* ====================
+        Mixins
+=======================
+*/
 @mixin elementBorder() {
   width: 100px;
   height: 100px;
@@ -76,17 +75,17 @@ body {
   overflow: auto;
 }
 
-//Google Translate White Space Fix
-/* .goog-te-spinner-pos+div {
-  height: auto !important;
-} */
 
-//moze to rozwiaze problem google translate
+//proba rozwiazania problemu google translate
 #root {
   height: 100%;
 }
 
 
+/* ====================
+      Header Div
+=======================
+*/
 .header {
   width: 50%;
   margin: 30px 0;
@@ -142,19 +141,23 @@ body {
   font-size: calc(10px + 5vw);
 }
 
+/* ====================
+    Choose Option Div
+=======================
+*/
 .chooseOption {
   grid-area: chooseOption;
   background: url(../images/bg-triangle.svg) no-repeat center;
-  //padding-top: calc(1px + 1vw);
 }
 
+/* The Biggest Border Creation */
 .paperElement,
 .rockElement,
 .scissorsElement {
   @include elementBorder();
 }
 
-
+/* Color of the Biggest Borders and Position */
 
 .paperElement {
   @include gradientBackground($paperGradientTop, $paperGradientBottom);
@@ -177,6 +180,7 @@ body {
   transform: translateX(50%) translateY(-100%);
 }
 
+/* Desgin, positions for the white circle with icon inside Element */
 .chooseElementButton {
   cursor: pointer;
   border-radius: 50%;
@@ -197,17 +201,31 @@ body {
   }
 }
 
+/*===================
+  Container of Rules
+=====================*/
 .rulesContainer {
   display: flex;
   justify-content: flex-end;
   margin-right: 80px;
 }
 
+/*===============================
+  Challenge and Who Made It Div
+================================*/
 .attribution {
   padding-top: 20px;
   text-align: center;
 
-  a:hover {
+
+  /* Links styles */
+  .attributionLink:link,
+  .attributionLink:visited {
+    color: red;
+    text-decoration: none;
+  }
+
+  .attributionLink:hover {
     color: white;
   }
 }

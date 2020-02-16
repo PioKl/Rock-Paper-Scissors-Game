@@ -1,5 +1,10 @@
 @import "./App.scss";
 
+/*
+============================
+        Rules Button 
+===========================*/
+
 .rulesOpenButton {
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -19,6 +24,12 @@
 
 }
 
+
+/*
+============================
+        Menu of Rules
+===========================*/
+
 .rulesMenu {
     position: absolute;
     top: 50%;
@@ -34,8 +45,16 @@
 
     .rulesCloseButton {
         cursor: pointer;
+        background-color: transparent;
+        border: 0px;
     }
 }
+
+
+/*
+============================
+    Animation of Menu
+===========================*/
 
 @keyframes showRules {
 
@@ -53,27 +72,10 @@
     }
 }
 
-@keyframes closeRules {
-
-    0% {
-        .rulesMenu {
-            top: 50%;
-        }
-
-    }
-
-    50% {
-        .rulesMenu {
-            top: 100%;
-        }
-    }
-
-    100% {
-        .rulesMenu {
-            top: 150%;
-        }
-    }
-}
+/*
+============================
+  Title inside Rules Menu 
+===========================*/
 
 .rulesTitle {
     display: flex;
@@ -86,17 +88,23 @@
         text-transform: uppercase;
         font-size: calc(10px + 2vw);
     }
-
-    button {
-        background-color: transparent;
-        border: 0px;
-    }
 }
+
+/*
+=====================================
+  Container of Img inside Rules Menu
+=====================================*/
 
 .rulesImgContainer {
     margin-top: 50px;
     margin-bottom: 20px;
 }
+
+
+/*
+============================
+       Media Queries
+===========================*/
 
 @media only screen and (max-width : 768px) {
     .rulesImg {

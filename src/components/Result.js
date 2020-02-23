@@ -2,6 +2,8 @@ import React from 'react';
 import paper from '../images/icon-paper.svg';
 import rock from '../images/icon-rock.svg';
 import scissors from '../images/icon-scissors.svg';
+import spock from '../images/icon-spock.svg';
+import lizard from '../images/icon-lizard.svg';
 import '../style/Result.scss';
 
 const Result = (props) => {
@@ -13,7 +15,7 @@ const Result = (props) => {
                     <h1 className='pickedTitle'>You Picked</h1>
                     <div className={`${playerChoice}Element ${currency === "YOU WIN" ? 'winImpulse' : null}`/*te currency jest po to, zeby dodac klase winImpulse w razie przypadku gdy gracz wygra */}>
                         <div className="choosedElement">
-                            <img className={`${playerChoice}Img`} src={playerChoice === 'paper' ? paper : playerChoice === 'rock' ? rock : playerChoice === 'scissors' ? scissors : null} alt={playerChoice} />
+                            <img className={`${playerChoice}Img`} src={playerChoice === 'paper' ? paper : playerChoice === 'rock' ? rock : playerChoice === 'scissors' ? scissors : playerChoice === 'spock' ? spock : playerChoice === 'lizard' ? lizard : null} alt={playerChoice} />
                         </div>
                     </div>
 
@@ -27,7 +29,7 @@ const Result = (props) => {
                     {computerChoice ?
                         <div className={`${computerChoice}Element ${currency === "YOU LOST" ? 'winImpulse' : null}` /* te currency jest po to, zeby dodac klase winImpulse w razie przypadku gdy komputer wygra */}>
                             <div className="choosedElement">
-                                <img className={`${computerChoice}Img`} src={computerChoice === 'paper' ? paper : computerChoice === 'rock' ? rock : computerChoice === 'scissors' ? scissors : null} alt={computerChoice} />
+                                <img className={`${computerChoice}Img`} src={computerChoice === 'paper' ? paper : computerChoice === 'rock' ? rock : computerChoice === 'scissors' ? scissors : computerChoice === 'spock' ? spock : computerChoice === 'lizard' ? lizard : null} alt={computerChoice} />
                             </div>
                         </div>
                         :

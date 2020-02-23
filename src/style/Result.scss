@@ -68,7 +68,9 @@
     /* Position for Result (rest is from App, classes have same name) */
     .paperElement,
     .rockElement,
-    .scissorsElement {
+    .scissorsElement,
+    .spockElement,
+    .lizardElement {
         margin: 0 auto;
         position: default;
         left: 0%;
@@ -83,7 +85,9 @@
 
             .paperImg,
             .rockImg,
-            .scissorsImg {
+            .scissorsImg,
+            .spockImg,
+            .lizardImg {
                 height: calc(50px + 1vw);
             }
         }
@@ -248,7 +252,9 @@
 
         .paperElement,
         .rockElement,
-        .scissorsElement {
+        .scissorsElement,
+        .spockElement,
+        .lizardElement {
             width: calc(40px + 20vw);
             height: calc(40px + 20vw);
 
@@ -258,7 +264,9 @@
 
                 .paperImg,
                 .rockImg,
-                .scissorsImg {
+                .scissorsImg,
+                .spockImg,
+                .lizardImg {
                     height: calc(30px + 3.5vw);
                 }
             }

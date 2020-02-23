@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../style/Rules.scss';
 import rulesImg from '../images/image-rules.svg';
+import rulesImgExtended from '../images/image-rules-bonus.svg';
 import iconClose from '../images/icon-close.svg';
 
 class Rules extends Component {
@@ -11,6 +12,7 @@ class Rules extends Component {
     state = {
         rules: false,
     }
+
 
     handleRules = (e) => {
         e.preventDefault();
@@ -30,7 +32,7 @@ class Rules extends Component {
                             <button className="rulesCloseButton" onClick={this.handleCloseRules} value='x'><img src={iconClose} alt="iconClose" /></button>
                         </div>
                         <div className='rulesImgContainer'>
-                            <img className='rulesImg' src={rulesImg} alt="rulesImg" />
+                            <img className='rulesImg' src={this.props.extendedVersion ? rulesImgExtended : rulesImg} alt="rulesImg" />
                         </div>
 
                     </div>

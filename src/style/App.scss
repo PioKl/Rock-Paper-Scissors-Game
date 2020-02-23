@@ -17,7 +17,8 @@ input,
 textarea,
 button,
 select,
-a {
+a,
+label {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -35,6 +36,12 @@ $paperGradientBottom: hsl(230, 89%, 65%);
 
 $rockGradientTop: hsl(349, 71%, 52%);
 $rockGradientBottom:hsl(349, 70%, 56%);
+
+$spockGradientTop: hsl(189, 59%, 53%);
+$spockGradientBottom: hsl(189, 58%, 57%);
+
+$lizardGradientTop: hsl(261, 73%, 60%);
+$lizardGradientBottom: hsl(261, 72%, 63%);
 
 $backgroundGradientTop: hsl(214, 47%, 23%);
 $backgroundGradientBottom: hsl(237, 49%, 15%);
@@ -105,7 +112,7 @@ body {
 .title {
   grid-area: title;
   justify-self: left;
-  align-self: center;
+  align-self: end;
 
   .logoImg {
     height: calc(20px + 6vw);
@@ -141,43 +148,148 @@ body {
   font-size: calc(10px + 5vw);
 }
 
-/* ====================
-    Choose Option Div
-=======================
+/* ============================
+    Choose Vertion of Game Div
+===============================
 */
-.chooseOption {
-  grid-area: chooseOption;
+.chooseVersionOfGame {
+  //text-align: center;
+  //position: relative;
+  max-width: 350px;
+  width: calc(95% - 1vw);
+  display: flex;
+  justify-self: center;
+  justify-content: space-between;
+  padding-bottom: 25px;
+
+  .choosedVersion {
+    align-self: center;
+  }
+
+  .versionSwitch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  .versionSwitch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked+.slider {
+    background-color: #2196F3;
+  }
+
+  input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  /* Rounded sliders */
+
+  //Rounded slider border
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  //Rounded Cricle
+  .slider.round:before {
+    border-radius: 50%;
+  }
+}
+
+/* =========================================
+    Choose Option Div and Classic Version Div
+=============================================
+*/
+//wczesniej chooseOption to bylo
+.classicVersionContainer {
+  //grid-area: chooseOption;
   background: url(../images/bg-triangle.svg) no-repeat center;
 }
 
 /* The Biggest Border Creation */
 .paperElement,
 .rockElement,
-.scissorsElement {
+.scissorsElement,
+.spockElement,
+.lizardElement {
   @include elementBorder();
 }
 
 /* Color of the Biggest Borders and Position */
 
-.paperElement {
-  @include gradientBackground($paperGradientTop, $paperGradientBottom);
+.paperElementClassic {
   position: relative;
   left: 50%;
   transform: translateX(-150%);
 }
 
-.rockElement {
-  @include gradientBackground($rockGradientTop, $rockGradientBottom);
+.rockElementClassic {
   position: relative;
   left: 50%;
   transform: translateX(-50%) translateY(-25%);
 }
 
-.scissorsElement {
-  @include gradientBackground($scissorsGradientTop, $scissorsGradientBottom);
+.scissorsElementClassic {
   position: relative;
   left: 50%;
   transform: translateX(50%) translateY(-100%);
+}
+
+.paperElement {
+  @include gradientBackground($paperGradientTop, $paperGradientBottom);
+
+}
+
+.rockElement {
+  @include gradientBackground($rockGradientTop, $rockGradientBottom);
+
+}
+
+.scissorsElement {
+  @include gradientBackground($scissorsGradientTop, $scissorsGradientBottom);
+
+}
+
+.spockElement {
+  @include gradientBackground($spockGradientTop, $spockGradientBottom);
+}
+
+.lizardElement {
+  @include gradientBackground($lizardGradientTop, $lizardGradientBottom);
 }
 
 /* Desgin, positions for the white circle with icon inside Element */
@@ -236,34 +348,47 @@ body {
  ============================*/
 @media only screen and (max-width : 768px) {
 
+  .header {
+    margin: 10px 0;
+    padding: 10px;
+  }
+
+  .chooseVersionOfGame {
+
+    padding-bottom: 0px;
+  }
 
   .chooseOption {
     padding-top: 50px;
     padding-bottom: 40px;
   }
 
-  .paperElement {
+  .paperElementClassic {
     transform: translateX(-160%) translateY(-40%);
   }
 
-  .scissorsElement {
+  .scissorsElementClassic {
     transform: translateX(60%) translateY(-140%);
   }
 
-  .rockElement {
+  .rockElementClassic {
     transform: translateX(-50%) translateY(-12%);
   }
 
   .paperElement,
   .rockElement,
-  .scissorsElement {
+  .scissorsElement,
+  .spockElement,
+  .lizardElement {
     width: calc(55px + 1vw);
     height: calc(55px + 1vw);
   }
 
   .paperImg,
   .rockImg,
-  .scissorsImg {
+  .scissorsImg,
+  .spockImg,
+  .lizardImg {
     height: calc(30px + 1vw);
   }
 

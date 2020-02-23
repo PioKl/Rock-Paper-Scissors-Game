@@ -1,0 +1,82 @@
+.extendedVersionContainer {
+    //grid-area: chooseOption;
+    background: url(../images/bg-pentagon.svg) no-repeat center;
+    position: relative;
+    height: 50vh;
+    padding-bottom: 45px;
+}
+
+
+.scissorsElementExtended {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(0%);
+}
+
+.spockElementExtended {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-150%) translateY(75%);
+}
+
+.paperElementExtended {
+    position: absolute;
+    left: 50%;
+    transform: translateX(50%) translateY(75%);
+}
+
+.lizardElementExtended {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-125%) translateY(200%);
+}
+
+.rockElementExtended {
+    position: absolute;
+    left: 50%;
+    transform: translateX(20%) translateY(200%);
+}
+
+
+@media only screen and (max-width : 768px) {
+
+    /*     .scissorsElementExtended {
+        transform: translateX(-50%) translateY(0%);
+    }
+
+    .spockElementExtended {
+        transform: translateX(-175%) translateY(100%);
+    }
+
+    .paperElementExtended {
+        transform: translateX(75%) translateY(100%);
+    }
+
+    .lizardElementExtended {
+        transform: translateX(-150%) translateY(250%);
+    }
+
+    .rockElementExtended {
+        transform: translateX(50%) translateY(250%);
+    } */
+
+    .scissorsElementExtended {
+        transform: translateX(-50%) translateY(-35%);
+    }
+
+    .spockElementExtended {
+        transform: translateX(-175%) translateY(50%);
+    }
+
+    .paperElementExtended {
+        transform: translateX(75%) translateY(50%);
+    }
+
+    .lizardElementExtended {
+        transform: translateX(-150%) translateY(225%);
+    }
+
+    .rockElementExtended {
+        transform: translateX(50%) translateY(225%);
+    }
+}

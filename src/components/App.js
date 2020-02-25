@@ -348,8 +348,7 @@ class App extends Component {
   }
 
   //Obsluga slidera to zmiany wersji gry
-  handleSlider = (e) => {
-    console.log(e.target.value)
+  handleSlider = () => {
     this.setState({
       extendedVersion: !this.state.extendedVersion, //zmiana stanu na przeciwny z false na true, a jak jest true to na false
     })
@@ -358,7 +357,6 @@ class App extends Component {
   render() {
     return (
       <>
-        {/* <div id='container'> */}
         <div id="mainMenu" className="App" onClick={this.handleCloseRulesOnAppClick} style={this.state.gameOn ? this.gridTemplateAreasResult : this.gridTemplateAreasChooseOption} > {/* zamykanie poprzez klikniecie w dowolne miejsce na stronie, postaram sie zrobic, zeby jak w okienko z zasadami klikne to sie nie zamykalo, czyli bede musial ten display w inny mdivie umiescic */}
           <div className="header">
             <div className='title'>
@@ -413,7 +411,6 @@ class App extends Component {
           Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer" className="attributionLink">Frontend Mentor</a>.
           Coded by <a href="https://github.com/PioKl" target="_blank" rel="noopener noreferrer" className="attributionLink">Piotr Kłosowski</a>.
         </div>
-        {/* </div> */}
       </>
     );
   }

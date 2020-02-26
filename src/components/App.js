@@ -45,6 +45,11 @@ class App extends Component {
     extendedVersion: false,
   }
 
+  //zaraz przy zamontowaniu "nasłuchiwanie", czy klawisz został wciśnięty i wywołał metodę handleEnterStart
+  componentDidMount() {
+    document.addEventListener("keydown", this.handleEnterRestart, false);
+  }
+
 
   //Po kliknieciu na divy z ikonkami rozpoczyna sie metoda, ktora sprawdzi wybor gracza z wyborem komputera, ktory zostanie wylosowany z tablicy. Warunki porownuja te wybory i na ich podstawie powstaje decyzja kto wygral. Ustawienie stanu currency i computerChoice jest opoznione o 3s w celu "wirtualizacji myslenia komputera", aby bylo ukazane, ze przez ten czas komputer zastanawia sie nad wyborem
   handlePlayerChoice = (e) => {
@@ -334,6 +339,18 @@ class App extends Component {
     }
   }
 
+  handleEnterRestart = (e) => {
+    //jesli wcisnieto enter, restart === false i dokonał się już jakiś wybór komputera, czyli wybór nie jest pusty, wtedy więc pojawi się przycisk Restart wtedy ustaw stan na poczatkowy
+    if (e.keyCode === 13 && this.state.restart === false && this.state.computerChoice !== '') {
+      this.setState({
+        gameOn: false,
+        computerChoice: '',
+        currency: '',
+      })
+    }
+  }
+
+
   /*Metoda uruchamiajaca sie jesli kliknie w obrebie diva App */
   handleCloseRulesOnAppClick = (rulesFromRulesState) => { //musze miec wartosc rules z Rules
     this.setState({
@@ -369,7 +386,7 @@ class App extends Component {
           </div>
           {this.state.gameOn ?
             <>
-              <Result playerChoice={this.playerChoice} computerChoice={this.state.computerChoice} currency={this.state.currency} handleRestart={this.handleRestart} />
+              <Result playerChoice={this.playerChoice} computerChoice={this.state.computerChoice} currency={this.state.currency} handleRestart={this.handleRestart} handleEnter={this.handleEnter} />
             </>
             :
             <>

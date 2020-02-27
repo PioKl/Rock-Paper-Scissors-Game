@@ -9,6 +9,7 @@ import rock from '../images/icon-rock.svg';
 import scissors from '../images/icon-scissors.svg';
 import logo from '../images/logo.svg';
 import logoExtended from '../images/logo-bonus.svg';
+import ChooseVersionOfGame from './ChooseVersionOfGame';
 
 class App extends Component {
 
@@ -390,15 +391,8 @@ class App extends Component {
             </>
             :
             <>
-              <div className="chooseVersionOfGame">
-                <span className="choosedVersion classicVersion">Classic Version</span>
-                <label className="versionSwitch">
-                  {/* w input w checked jest warunek, aby byl slajder ciagle przesuniety w prawo, czyli zaznaczony jesli wybralem rozszerzona wersje, bo inaczej po restarcie wracalby do wersji podstawowej */}
-                  <input type="checkbox" name="" id="" checked={`${this.state.extendedVersion ? 'checked' : ''}`} onChange={this.handleSlider} />
-                  <span className="slider round"></span>
-                </label>
-                <span className="choosedVersion extendedVersion">Extended Version</span>
-              </div>
+              <ChooseVersionOfGame extendedVersion={this.state.extendedVersion} handleSlider={this.handleSlider} />
+
               {this.state.extendedVersion ?
 
                 <ExtendedVersion handlePlayerChoice={this.handlePlayerChoice} />

@@ -22,13 +22,13 @@ class App extends Component {
     display: "grid",
     gridTemplateColumns: "1fr",
     gridTemplateRows: "auto",
-    gridTemplateAreas: "'header''chooseVersionOfGame''chooseOption''rulesContainer'",
+    gridTemplateAreas: "'header''chooseVersionOfGame''chooseOption'",
   };
   gridTemplateAreasResult = {
     display: "grid",
     gridTemplateColumns: "1fr",
     gridTemplateRows: "auto",
-    gridTemplateAreas: "'header''result''rulesContainer'",
+    gridTemplateAreas: "'header''result'",
   }
 
   choicesForComputer = ['paper', 'rock', 'scissors'];

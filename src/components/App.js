@@ -22,7 +22,7 @@ class App extends Component {
     display: "grid",
     gridTemplateColumns: "1fr",
     gridTemplateRows: "auto",
-    gridTemplateAreas: "'header''chooseVertionOfGame''chooseOption''rulesContainer'",
+    gridTemplateAreas: "'header''chooseVersionOfGame''chooseOption''rulesContainer'",
   };
   gridTemplateAreasResult = {
     display: "grid",

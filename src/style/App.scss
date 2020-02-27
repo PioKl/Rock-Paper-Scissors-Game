@@ -155,6 +155,7 @@ body {
 .chooseVersionOfGame {
   //text-align: center;
   //position: relative;
+  grid-area: chooseVersionOfGame;
   max-width: 350px;
   width: calc(95% - 1vw);
   display: flex;
@@ -234,9 +235,12 @@ body {
     Choose Option Div and Classic Version Div
 =============================================
 */
-//wczesniej chooseOption to bylo
+
+.chooseOption {
+  grid-area: chooseOption;
+}
+
 .classicVersionContainer {
-  //grid-area: chooseOption;
   background: url(../images/bg-triangle.svg) no-repeat center;
 }
 
@@ -317,6 +321,7 @@ body {
   Container of Rules
 =====================*/
 .rulesContainer {
+  grid-area: rulesContainer;
   display: flex;
   justify-content: flex-end;
   margin-right: 80px;

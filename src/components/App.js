@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import '../style/App.scss';
+
 import Header from './Header';
+import ExtendedVersion from './ExtendedVersion';
 import Rules from './Rules';
 import Result from './Result';
-import ExtendedVersion from './ExtendedVersion';
+import Footer from './Footer';
 
 import paper from '../images/icon-paper.svg';
 import rock from '../images/icon-rock.svg';
@@ -410,10 +412,7 @@ class App extends Component {
         <div className='rulesContainer'>
           <Rules rulesApp={this.state.rules} handleCloseRulesOnAppClick={this.handleCloseRulesOnAppClick} extendedVersion={this.state.extendedVersion} />
         </div>
-        <div className="attribution">
-          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer" className="attributionLink">Frontend Mentor</a>.
-          Coded by <a href="https://github.com/PioKl" target="_blank" rel="noopener noreferrer" className="attributionLink">Piotr Kłosowski</a>.
-        </div>
+        <Footer />
       </>
     );
   }

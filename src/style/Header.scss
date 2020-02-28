@@ -1,0 +1,71 @@
+@import "./App.scss";
+
+/* ====================
+      Header Div
+=======================
+*/
+.header {
+    width: 50%;
+    margin: 30px 0;
+    grid-area: header;
+    display: grid;
+    justify-self: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "title points";
+    border: 3px solid $headerOutline;
+    border-radius: 1rem;
+    font-weight: 700;
+    padding: 20px;
+    padding-top: 10px;
+}
+
+.title {
+    grid-area: title;
+    justify-self: left;
+    align-self: end;
+
+    .logoImg {
+        height: calc(20px + 6vw);
+    }
+}
+
+.pointsContainer {
+    grid-area: points;
+    border-radius: 5px;
+    justify-self: right;
+    padding: 10px 40px 0 40px;
+    background-color: #fff;
+    font-weight: 600;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.points-title,
+.points-count {
+    @include marginPaddingZero();
+}
+
+.points-title {
+    color: $scoreText;
+    font-size: calc(8px + .4vw);
+}
+
+.points-count {
+    text-align: center;
+    color: $darkText;
+    font-size: calc(10px + 5vw);
+}
+
+/*=============================
+          Media Queries 
+ ============================*/
+@media only screen and (max-width : 768px) {
+
+    .header {
+        margin: 10px 0;
+        padding: 10px;
+    }
+}

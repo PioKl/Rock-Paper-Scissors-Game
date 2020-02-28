@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../style/App.scss';
+import Header from './Header';
 import Rules from './Rules';
 import Result from './Result';
 import ExtendedVersion from './ExtendedVersion';
@@ -7,8 +8,6 @@ import ExtendedVersion from './ExtendedVersion';
 import paper from '../images/icon-paper.svg';
 import rock from '../images/icon-rock.svg';
 import scissors from '../images/icon-scissors.svg';
-import logo from '../images/logo.svg';
-import logoExtended from '../images/logo-bonus.svg';
 import ChooseVersionOfGame from './ChooseVersionOfGame';
 
 class App extends Component {
@@ -376,15 +375,8 @@ class App extends Component {
     return (
       <>
         <div id="mainMenu" className="App" onClick={this.handleCloseRulesOnAppClick} style={this.state.gameOn ? this.gridTemplateAreasResult : this.gridTemplateAreasChooseOption} > {/* zamykanie poprzez klikniecie w dowolne miejsce na stronie, postaram sie zrobic, zeby jak w okienko z zasadami klikne to sie nie zamykalo, czyli bede musial ten display w inny mdivie umiescic */}
-          <div className="header">
-            <div className='title'>
-              <a href="mainMenu"><img className="logoImg" src={this.state.extendedVersion ? logoExtended : logo} alt={logo} /></a>
-            </div>
-            <div className='pointsContainer'>
-              <p className='points-title'>SCORE</p>
-              <p className='points-count'>{this.points}</p>
-            </div>
-          </div>
+          <Header extendedVersion={this.state.extendedVersion} points={this.points} />
+
           {this.state.gameOn ?
             <>
               <Result playerChoice={this.playerChoice} computerChoice={this.state.computerChoice} currency={this.state.currency} handleRestart={this.handleRestart} handleEnter={this.handleEnter} />

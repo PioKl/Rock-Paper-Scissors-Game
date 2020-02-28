@@ -1,5 +1,15 @@
 @import "./App.scss";
 
+
+/*===================
+  Container of Rules
+=====================*/
+.rulesContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 80px;
+}
+
 /*
 ============================
         Rules Button 
@@ -107,7 +117,14 @@
 ===========================*/
 
 @media only screen and (max-width : 768px) {
+
+    .rulesContainer {
+        justify-content: center;
+        margin-right: 0px;
+    }
+
     .rulesImg {
         height: calc(180px + 9vw);
     }
+
 }

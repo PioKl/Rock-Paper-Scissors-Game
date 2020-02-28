@@ -60,11 +60,12 @@ class Rules extends Component {
     render() {
         return (
             <>
-
-                {this.state.rules ? document.addEventListener('click', this.handleCloseGlobal) : null}
-                <button className="rulesOpenButton" onClick={this.handleRules} style={{ backgroundColor: (this.state.rules ? 'white' : null), color: (this.state.rules ? 'hsl(229, 25%, 31%)' : null) }} value='rules'>Rules</button>
-                {this.displayRules()}
-                {this.state.rules ? <style>{'body { background-color: background-color: rgba(0, 0, 0, .3) } .App {opacity: .3}'}</style> : null}
+                <div className='rulesContainer'>
+                    {this.state.rules ? document.addEventListener('click', this.handleCloseGlobal) : null}
+                    <button className="rulesOpenButton" onClick={this.handleRules} style={{ backgroundColor: (this.state.rules ? 'white' : null), color: (this.state.rules ? 'hsl(229, 25%, 31%)' : null) }} value='rules'>Rules</button>
+                    {this.displayRules()}
+                    {this.state.rules ? <style>{'body { background-color: background-color: rgba(0, 0, 0, .3) } .App {opacity: .3}'}</style> : null}
+                </div>
             </>
 
         );

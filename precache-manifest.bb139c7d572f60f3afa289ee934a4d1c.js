@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "7554825282490f8d217c",
-    "url": "/Rock-Paper-Scissors-Game/static/css/main.2addd38b.chunk.css"
+    "revision": "8b005b958d42b2a6093e",
+    "url": "/Rock-Paper-Scissors-Game/static/css/main.38270338.chunk.css"
   },
   {
-    "revision": "7554825282490f8d217c",
-    "url": "/Rock-Paper-Scissors-Game/static/js/main.faf13e11.chunk.js"
+    "revision": "8b005b958d42b2a6093e",
+    "url": "/Rock-Paper-Scissors-Game/static/js/main.4f205b82.chunk.js"
   },
   {
     "revision": "a700dd80aa6135fadc8f",
@@ -40,6 +40,10 @@ self.__precacheManifest = [
     "url": "/Rock-Paper-Scissors-Game/static/media/logo.759a2075.svg"
   },
   {
+    "revision": "f4c973f743c8b75de9da23335e126dcd",
+    "url": "/Rock-Paper-Scissors-Game/static/media/logo-bonus.f4c973f7.svg"
+  },
+  {
     "revision": "5d74d25d9c64bde346585ec7e7587a69",
     "url": "/Rock-Paper-Scissors-Game/static/media/image-rules.5d74d25d.svg"
   },
@@ -52,10 +56,6 @@ self.__precacheManifest = [
     "url": "/Rock-Paper-Scissors-Game/static/media/icon-close.919ab92a.svg"
   },
   {
-    "revision": "f4c973f743c8b75de9da23335e126dcd",
-    "url": "/Rock-Paper-Scissors-Game/static/media/logo-bonus.f4c973f7.svg"
-  },
-  {
     "revision": "1fd44bdf9274b331fe659004ccc71e63",
     "url": "/Rock-Paper-Scissors-Game/static/media/bg-triangle.1fd44bdf.svg"
   },
@@ -64,7 +64,7 @@ self.__precacheManifest = [
     "url": "/Rock-Paper-Scissors-Game/static/media/bg-pentagon.aced7052.svg"
   },
   {
-    "revision": "218b8087d45e599359dad6bbea2659a7",
+    "revision": "802476da00a180593ba22b6e1222a206",
     "url": "/Rock-Paper-Scissors-Game/index.html"
   }
 ];

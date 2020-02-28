@@ -175,16 +175,6 @@ body {
   }
 }
 
-/*===================
-  Container of Rules
-=====================*/
-.rulesContainer {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 80px;
-}
-
-
 /*=============================
           Media Queries 
  ============================*/
@@ -236,14 +226,5 @@ body {
 
   .pointsContainer {
     padding: 0px 20px 0 20px;
-  }
-
-  .rulesContainer {
-    justify-content: center;
-    margin-right: 0px;
-  }
-
-  .attribution {
-    padding-bottom: 5px;
   }
 }

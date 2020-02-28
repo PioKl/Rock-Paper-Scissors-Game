@@ -1,0 +1,25 @@
+/*===============================
+  Footer (Challenge and Who Made It Div)
+================================*/
+.footer {
+    padding-top: 20px;
+    text-align: center;
+
+
+    /* Links styles */
+    .footerLink:link,
+    .footerLink:visited {
+        color: red;
+        text-decoration: none;
+    }
+
+    .footerLink:hover {
+        color: white;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .footer {
+        padding-bottom: 5px;
+    }
+}

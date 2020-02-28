@@ -407,11 +407,8 @@ class App extends Component {
 
             </>
           }
-          <br />
         </div>
-        <div className='rulesContainer'>
-          <Rules rulesApp={this.state.rules} handleCloseRulesOnAppClick={this.handleCloseRulesOnAppClick} extendedVersion={this.state.extendedVersion} />
-        </div>
+        <Rules rulesApp={this.state.rules} handleCloseRulesOnAppClick={this.handleCloseRulesOnAppClick} extendedVersion={this.state.extendedVersion} />
         <Footer />
       </>
     );

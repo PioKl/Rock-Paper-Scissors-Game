@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "59c452df7f06e477c428",
+    "revision": "91be950821078d4c8377",
     "url": "/Rock-Paper-Scissors-Game/static/css/main.dc1c1d11.chunk.css"
   },
   {
-    "revision": "59c452df7f06e477c428",
-    "url": "/Rock-Paper-Scissors-Game/static/js/main.e08a9099.chunk.js"
+    "revision": "91be950821078d4c8377",
+    "url": "/Rock-Paper-Scissors-Game/static/js/main.8d02fb13.chunk.js"
   },
   {
     "revision": "a700dd80aa6135fadc8f",
@@ -64,7 +64,7 @@ self.__precacheManifest = [
     "url": "/Rock-Paper-Scissors-Game/static/media/bg-pentagon.aced7052.svg"
   },
   {
-    "revision": "b8cda3e193cb36cd5ce262a16d1d3192",
+    "revision": "038dc9ff272983a3330582181f5834c5",
     "url": "/Rock-Paper-Scissors-Game/index.html"
   }
 ];

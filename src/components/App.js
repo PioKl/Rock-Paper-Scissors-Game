@@ -3,14 +3,11 @@ import '../style/App.scss';
 
 import Header from './Header';
 import ChooseVersionOfGame from './ChooseVersionOfGame';
+import ClassicVersion from './ClassicVersion';
 import ExtendedVersion from './ExtendedVersion';
 import Rules from './Rules';
 import Result from './Result';
 import Footer from './Footer';
-
-import paper from '../images/icon-paper.svg';
-import rock from '../images/icon-rock.svg';
-import scissors from '../images/icon-scissors.svg';
 
 
 class App extends Component {
@@ -392,17 +389,7 @@ class App extends Component {
 
                 <ExtendedVersion handlePlayerChoice={this.handlePlayerChoice} />
                 :
-                <div className='chooseOption classicVersionContainer'>
-                  <div className='paperElement paperElementClassic'>
-                    <button className='chooseElementButton' onClick={this.handlePlayerChoice} value='paper'><img className='paperImg' src={paper} alt="icon-paper" /></button>
-                  </div>
-                  <div className='scissorsElement scissorsElementClassic'>
-                    <button className='chooseElementButton' onClick={this.handlePlayerChoice} value='scissors'><img className='scissorsImg' src={scissors} alt="icon-scissors" /></button>
-                  </div>
-                  <div className='rockElement rockElementClassic'>
-                    <button className='chooseElementButton' onClick={this.handlePlayerChoice} value='rock'><img className='rockImg' src={rock} alt="icon-rock" /></button>
-                  </div>
-                </div>
+                <ClassicVersion handlePlayerChoice={this.handlePlayerChoice} />
               }
             </>
           }

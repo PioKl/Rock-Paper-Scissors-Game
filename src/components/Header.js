@@ -7,7 +7,7 @@ const Header = (props) => {
     return (
         <div className="header">
             <div className='title'>
-                <a href="index.html"><img className="logoImg" src={props.extendedVersion ? logoExtended : logo} alt={logo} /></a>
+                <a href="./"><img className="logoImg" src={props.extendedVersion ? logoExtended : logo} alt={logo} /></a>
             </div>
             <div className='pointsContainer'>
                 <p className='points-title'>SCORE</p>

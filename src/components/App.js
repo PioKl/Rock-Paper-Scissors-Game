@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../style/App.scss';
 
 import Header from './Header';
+import ChooseVersionOfGame from './ChooseVersionOfGame';
 import ExtendedVersion from './ExtendedVersion';
 import Rules from './Rules';
 import Result from './Result';
@@ -10,7 +11,7 @@ import Footer from './Footer';
 import paper from '../images/icon-paper.svg';
 import rock from '../images/icon-rock.svg';
 import scissors from '../images/icon-scissors.svg';
-import ChooseVersionOfGame from './ChooseVersionOfGame';
+
 
 class App extends Component {
 
@@ -403,8 +404,6 @@ class App extends Component {
                   </div>
                 </div>
               }
-
-
             </>
           }
         </div>

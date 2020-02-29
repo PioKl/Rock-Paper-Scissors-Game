@@ -12,6 +12,11 @@ button::-moz-focus-inner {
   border: 0;
 }
 
+//Pozbawienie czerwonego wykropkowanego obramowania w firefox, przy <a></a>
+a {
+  outline: 0;
+}
+
 //pozbawienie niebieskiego obramowania przycisku i innych rzeczy w chrome
 input,
 textarea,

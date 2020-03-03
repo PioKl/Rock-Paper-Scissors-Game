@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Rock-Paper-Scissors-Game/precache-manifest.54c94c3ee00ca50df00491184667cad3.js"
+  "/Rock-Paper-Scissors-Game/precache-manifest.81dae1866eecd761d5f2f61a77b8f4f8.js"
 );
 
 workbox.clientsClaim();

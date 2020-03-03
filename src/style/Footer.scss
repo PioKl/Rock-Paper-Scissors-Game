@@ -6,13 +6,13 @@
     text-align: center;
 
     /* Links styles */
-    .footerLink:link,
-    .footerLink:visited {
+    &__link:link,
+    &__link:visited {
         color: red;
         text-decoration: none;
     }
 
-    .footerLink:hover {
+    &__link:hover {
         color: white;
     }
 }

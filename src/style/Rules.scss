@@ -15,7 +15,7 @@
         Rules Button 
 ===========================*/
 
-.rulesOpenButton {
+.btn-primary {
     text-transform: uppercase;
     letter-spacing: 3px;
     padding: 10px 40px;
@@ -53,10 +53,37 @@
     flex-flow: column;
     animation: showRules .5s linear;
 
-    .rulesCloseButton {
+    /*
+    ============================
+      Title inside Rules Menu 
+    ===========================*/
+    &__titleContainer {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+    }
+
+    &__headingPrimary {
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+        font-size: calc(10px + 2vw);
+    }
+
+    /*==========================================*/
+    &__closeButton {
         cursor: pointer;
         background-color: transparent;
         border: 0px;
+    }
+
+
+    /*=====================================
+        Container of Img inside Rules Menu
+    =====================================*/
+    &__imgContainer {
+        margin-top: 50px;
+        margin-bottom: 20px;
     }
 }
 
@@ -84,35 +111,6 @@
 
 /*
 ============================
-  Title inside Rules Menu 
-===========================*/
-
-.rulesTitle {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-
-    h1 {
-        margin: 0;
-        padding: 0;
-        text-transform: uppercase;
-        font-size: calc(10px + 2vw);
-    }
-}
-
-/*
-=====================================
-  Container of Img inside Rules Menu
-=====================================*/
-
-.rulesImgContainer {
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
-
-
-/*
-============================
        Media Queries
 ===========================*/
 
@@ -123,8 +121,10 @@
         margin-right: 0px;
     }
 
-    .rulesImg {
-        height: calc(180px + 9vw);
+    .rulesMenu {
+        &__rulesImg {
+            height: calc(180px + 9vw);
+        }
     }
 
 }

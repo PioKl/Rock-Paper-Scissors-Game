@@ -27,55 +27,46 @@
 }
 
 /* The Biggest Border Creation */
+
 .paperElement,
 .rockElement,
-.scissorsElement,
-.spockElement,
-.lizardElement {
+.scissorsElement {
     @include elementBorder();
 }
 
 /* Color of the Biggest Borders and Position */
 
-.paperElementClassic {
-    position: relative;
-    left: 50%;
-    transform: translateX(-150%);
-}
-
-.rockElementClassic {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%) translateY(-25%);
-}
-
-.scissorsElementClassic {
-    position: relative;
-    left: 50%;
-    transform: translateX(50%) translateY(-100%);
-}
-
 .paperElement {
     @include gradientBackground($paperGradientTop, $paperGradientBottom);
+
+    &--classic {
+        position: relative;
+        left: 50%;
+        transform: translateX(-150%);
+    }
 
 }
 
 .rockElement {
     @include gradientBackground($rockGradientTop, $rockGradientBottom);
 
+    &--classic {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%) translateY(-25%);
+    }
+
 }
 
 .scissorsElement {
     @include gradientBackground($scissorsGradientTop, $scissorsGradientBottom);
 
-}
+    &--classic {
+        position: relative;
+        left: 50%;
+        transform: translateX(50%) translateY(-100%);
+    }
 
-.spockElement {
-    @include gradientBackground($spockGradientTop, $spockGradientBottom);
-}
-
-.lizardElement {
-    @include gradientBackground($lizardGradientTop, $lizardGradientBottom);
 }
 
 /* Desgin, positions for the white circle with icon inside Element */
@@ -109,32 +100,33 @@
         padding-bottom: 40px;
     }
 
-    .paperElementClassic {
-        transform: translateX(-160%) translateY(-40%);
-    }
-
-    .scissorsElementClassic {
-        transform: translateX(60%) translateY(-140%);
-    }
-
-    .rockElementClassic {
-        transform: translateX(-50%) translateY(-12%);
-    }
-
     .paperElement,
     .rockElement,
-    .scissorsElement,
-    .spockElement,
-    .lizardElement {
+    .scissorsElement {
         width: calc(55px + 1vw);
         height: calc(55px + 1vw);
     }
 
-    .paperImg,
-    .rockImg,
-    .scissorsImg,
-    .spockImg,
-    .lizardImg {
+    .paperElement {
+        &--classic {
+            transform: translateX(-160%) translateY(-40%);
+        }
+    }
+
+    .scissorsElement {
+        &--classic {
+            transform: translateX(60%) translateY(-140%);
+        }
+    }
+
+    .rockElement {
+        &--classic {
+            transform: translateX(-50%) translateY(-12%);
+        }
+
+    }
+
+    .iconImg {
         height: calc(30px + 1vw);
     }
 

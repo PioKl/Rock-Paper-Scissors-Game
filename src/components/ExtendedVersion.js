@@ -10,22 +10,22 @@ const ExtendedVersion = (props) => {
     return (
         <>
             <div className='chooseOption extendedVersionContainer'>
-                <div className='scissorsElement scissorsElementExtended'>
-                    <button className='chooseElementButton' onClick={props.handlePlayerChoice} value='scissors'><img className='scissorsImg' src={scissors} alt="icon-scissors" /></button>
+                <div className='scissorsElement scissorsElement--extended'>
+                    <button className='chooseElementButton' onClick={props.handlePlayerChoice} value='scissors'><img className='scissorsImg iconImg' src={scissors} alt="icon-scissors" /></button>
                 </div>
-                <div className='spockElement spockElementExtended'>
-                    <button className='chooseElementButton' onClick={props.handlePlayerChoice} value='spock'><img className='spockImg' src={spock} alt="icon-spock" /></button>
+                <div className='spockElement spockElement--extended'>
+                    <button className='chooseElementButton' onClick={props.handlePlayerChoice} value='spock'><img className='spockImg iconImg' src={spock} alt="icon-spock" /></button>
                 </div>
-                <div className='paperElement paperElementExtended'>
-                    <button className='chooseElementButton' onClick={props.handlePlayerChoice} value='paper'><img className='paperImg' src={paper} alt="icon-paper" /></button>
-                </div>
-
-                <div className='lizardElement lizardElementExtended'>
-                    <button className='chooseElementButton' onClick={props.handlePlayerChoice} value='lizard'><img className='lizardImg' src={lizard} alt="icon-lizard" /></button>
+                <div className='paperElement paperElement--extended'>
+                    <button className='chooseElementButton' onClick={props.handlePlayerChoice} value='paper'><img className='paperImg iconImg' src={paper} alt="icon-paper" /></button>
                 </div>
 
-                <div className='rockElement rockElementExtended'>
-                    <button className='chooseElementButton' onClick={props.handlePlayerChoice} value='rock'><img className='rockImg' src={rock} alt="icon-rock" /></button>
+                <div className='lizardElement lizardElement--extended'>
+                    <button className='chooseElementButton' onClick={props.handlePlayerChoice} value='lizard'><img className='lizardImg iconImg' src={lizard} alt="icon-lizard" /></button>
+                </div>
+
+                <div className='rockElement rockElement--extended'>
+                    <button className='chooseElementButton' onClick={props.handlePlayerChoice} value='rock'><img className='rockImg iconImg' src={rock} alt="icon-rock" /></button>
                 </div>
             </div>
         </>

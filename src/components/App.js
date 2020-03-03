@@ -376,7 +376,6 @@ class App extends Component {
       <>
         <div id="mainMenu" className="App" onClick={this.handleCloseRulesOnAppClick} style={this.state.gameOn ? this.gridTemplateAreasResult : this.gridTemplateAreasChooseOption} > {/* zamykanie poprzez klikniecie w dowolne miejsce na stronie, postaram sie zrobic, zeby jak w okienko z zasadami klikne to sie nie zamykalo, czyli bede musial ten display w inny mdivie umiescic */}
           <Header extendedVersion={this.state.extendedVersion} points={this.points} />
-
           {this.state.gameOn ?
             <>
               <Result playerChoice={this.playerChoice} computerChoice={this.state.computerChoice} currency={this.state.currency} handleRestart={this.handleRestart} handleEnter={this.handleEnter} />

@@ -5,15 +5,15 @@ import logoExtended from '../images/logo-bonus.svg';
 
 const Header = (props) => {
     return (
-        <div className="header">
-            <div className='title'>
-                <a href="./"><img className="logoImg" src={props.extendedVersion ? logoExtended : logo} alt={logo} /></a>
+        <header className="header">
+            <div className='header__title'>
+                <a href="./"><img className="header__logoImg" src={props.extendedVersion ? logoExtended : logo} alt={logo} /></a>
             </div>
-            <div className='pointsContainer'>
-                <p className='points-title'>SCORE</p>
-                <p className='points-count'>{props.points}</p>
+            <div className='header__pointsContainer'>
+                <p className='header__points header__points--title'>SCORE</p>
+                <p className='header__points header__points--count'>{props.points}</p>
             </div>
-        </div>
+        </header>
     );
 }
 

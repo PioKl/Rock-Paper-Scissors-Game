@@ -6,14 +6,14 @@ import scissors from '../images/icon-scissors.svg';
 const ClassicVersion = (props) => {
     return (
         <div className='chooseOption classicVersionContainer'>
-            <div className='paperElement paperElementClassic'>
-                <button className='chooseElementButton' onClick={props.handlePlayerChoice} value='paper'><img className='paperImg' src={paper} alt="icon-paper" /></button>
+            <div className='paperElement paperElement--classic'>
+                <button className='chooseElementButton' onClick={props.handlePlayerChoice} value='paper'><img className='paperImg iconImg' src={paper} alt="icon-paper" /></button>
             </div>
-            <div className='scissorsElement scissorsElementClassic'>
-                <button className='chooseElementButton' onClick={props.handlePlayerChoice} value='scissors'><img className='scissorsImg' src={scissors} alt="icon-scissors" /></button>
+            <div className='scissorsElement scissorsElement--classic'>
+                <button className='chooseElementButton' onClick={props.handlePlayerChoice} value='scissors'><img className='scissorsImg iconImg' src={scissors} alt="icon-scissors" /></button>
             </div>
-            <div className='rockElement rockElementClassic'>
-                <button className='chooseElementButton' onClick={props.handlePlayerChoice} value='rock'><img className='rockImg' src={rock} alt="icon-rock" /></button>
+            <div className='rockElement rockElement--classic'>
+                <button className='chooseElementButton' onClick={props.handlePlayerChoice} value='rock'><img className='rockImg iconImg' src={rock} alt="icon-rock" /></button>
             </div>
         </div>
     );

@@ -27,12 +27,12 @@ class Rules extends Component {
             return (
                 <>
                     <div className='rulesMenu'>
-                        <div className='rulesTitle'>
-                            <h1>Rules</h1>
-                            <button className="rulesCloseButton" onClick={this.handleCloseRules} value='x'><img src={iconClose} alt="iconClose" /></button>
+                        <div className='rulesMenu__titleContainer'>
+                            <h1 className='rulesMenu__headingPrimary'>Rules</h1>
+                            <button className="rulesMenu__closeButton" onClick={this.handleCloseRules} value='x'><img src={iconClose} alt="iconClose" /></button>
                         </div>
-                        <div className='rulesImgContainer'>
-                            <img className='rulesImg' src={this.props.extendedVersion ? rulesImgExtended : rulesImg} alt="rulesImg" />
+                        <div className='rulesMenu__imgContainer'>
+                            <img className='rulesMenu__rulesImg' src={this.props.extendedVersion ? rulesImgExtended : rulesImg} alt="rulesImg" />
                         </div>
 
                     </div>
@@ -62,7 +62,7 @@ class Rules extends Component {
             <>
                 <div className='rulesContainer'>
                     {this.state.rules ? document.addEventListener('click', this.handleCloseGlobal) : null}
-                    <button className="rulesOpenButton" onClick={this.handleRules} style={{ backgroundColor: (this.state.rules ? 'white' : null), color: (this.state.rules ? 'hsl(229, 25%, 31%)' : null) }} value='rules'>Rules</button>
+                    <button className="rulesContainer__rulesOpenButton btn-primary" onClick={this.handleRules} style={{ backgroundColor: (this.state.rules ? 'white' : null), color: (this.state.rules ? 'hsl(229, 25%, 31%)' : null) }} value='rules'>Rules</button>
                     {this.displayRules()}
                     {this.state.rules ? <style>{'body { background-color: background-color: rgba(0, 0, 0, .3) } .App {opacity: .3}'}</style> : null}
                 </div>

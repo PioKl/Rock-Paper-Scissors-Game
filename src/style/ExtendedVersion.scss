@@ -1,62 +1,103 @@
+@import "./ClassicVersion.scss";
+
 .extendedVersionContainer {
-    //grid-area: chooseOption;
     background: url(../images/bg-pentagon.svg) no-repeat center;
     position: relative;
     height: 50vh;
     padding-bottom: 45px;
 }
 
-
-.scissorsElementExtended {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) translateY(0%);
+.spockElement,
+.lizardElement {
+    @include elementBorder();
 }
 
-.spockElementExtended {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-150%) translateY(75%);
+.spockElement {
+    @include gradientBackground($spockGradientTop, $spockGradientBottom);
+
+    &--extended {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-150%) translateY(75%);
+    }
+
 }
 
-.paperElementExtended {
-    position: absolute;
-    left: 50%;
-    transform: translateX(50%) translateY(75%);
+.lizardElement {
+    @include gradientBackground($lizardGradientTop, $lizardGradientBottom);
+
+    &--extended {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-125%) translateY(200%);
+    }
+
 }
 
-.lizardElementExtended {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-125%) translateY(200%);
+.scissorsElement {
+    &--extended {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateY(0%);
+    }
 }
 
-.rockElementExtended {
-    position: absolute;
-    left: 50%;
-    transform: translateX(20%) translateY(200%);
+.paperElement {
+    &--extended {
+        position: absolute;
+        left: 50%;
+        transform: translateX(50%) translateY(75%);
+    }
 }
 
+.rockElement {
+    &--extended {
+        position: absolute;
+        left: 50%;
+        transform: translateX(20%) translateY(200%);
+    }
+}
 
 @media only screen and (max-width : 768px) {
 
-    .scissorsElementExtended {
-        transform: translateX(-50%) translateY(-35%);
+    .spockElement,
+    .lizardElement {
+        width: calc(55px + 1vw);
+        height: calc(55px + 1vw);
     }
 
-    .spockElementExtended {
-        transform: translateX(-175%) translateY(50%);
+    .scissorsElement {
+        &--extended {
+            transform: translateX(-50%) translateY(-35%);
+        }
     }
 
-    .paperElementExtended {
-        transform: translateX(75%) translateY(50%);
+    .spockElement {
+        &--extended {
+            transform: translateX(-175%) translateY(50%);
+        }
     }
 
-    .lizardElementExtended {
-        transform: translateX(-150%) translateY(225%);
+    .paperElement {
+        &--extended {
+            transform: translateX(75%) translateY(50%);
+        }
     }
 
-    .rockElementExtended {
-        transform: translateX(50%) translateY(225%);
+    .lizardElement {
+        &--extended {
+            transform: translateX(-150%) translateY(225%);
+        }
+
+    }
+
+    .rockElement {
+        &--extended {
+            transform: translateX(50%) translateY(225%);
+        }
+    }
+
+    .iconImg {
+        height: calc(30px + 1vw);
     }
 }

@@ -49,8 +49,19 @@
     grid-area: playerChoice;
 }
 
+/* ====================
+    Restart Game Div
+=======================
+*/
 .restartGame {
     grid-area: restartGame;
+    @include flexCenter();
+
+    &__buttonRestart {
+        @extend .btn-primary;
+        padding: 30px 40px;
+        letter-spacing: 5px;
+    }
 }
 
 .computerChoice {
@@ -83,11 +94,7 @@
             cursor: auto;
             @include flexCenter();
 
-            .paperImg,
-            .rockImg,
-            .scissorsImg,
-            .spockImg,
-            .lizardImg {
+            .iconImg {
                 height: calc(50px + 1vw);
             }
         }
@@ -215,15 +222,15 @@
     Restart Game Div
 =======================
 */
-.restartGame {
+/* .restartGame {
     @include flexCenter();
 
     .buttonRestart {
-        @extend .rulesOpenButton;
+        @extend .btn-primary;
         padding: 30px 40px;
         letter-spacing: 5px;
     }
-}
+} */
 
 
 /* ====================
@@ -262,11 +269,7 @@
                 width: calc(40px + 14vw);
                 height: calc(40px + 14vw);
 
-                .paperImg,
-                .rockImg,
-                .scissorsImg,
-                .spockImg,
-                .lizardImg {
+                .iconImg {
                     height: calc(30px + 3.5vw);
                 }
             }
@@ -288,11 +291,11 @@
     }
 
     .restartGame {
-        .currencyOfGame {
+        &__currencyOfGame {
             font-size: calc(8px + 2.9vw);
         }
 
-        .buttonRestart {
+        &__buttonRestart {
             padding: 20px 20px;
             letter-spacing: 5px;
             font-size: calc(8px + 1vw);

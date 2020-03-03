@@ -18,9 +18,47 @@
     font-weight: 700;
     padding: 20px;
     padding-top: 10px;
+
+    &__title {
+        grid-area: title;
+        justify-self: left;
+        align-self: end;
+    }
+
+    &__logoImg {
+        height: calc(20px + 6vw);
+    }
+
+    &__pointsContainer {
+        grid-area: points;
+        border-radius: 5px;
+        justify-self: right;
+        padding: 10px 40px 0 40px;
+        background-color: #fff;
+        font-weight: 600;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    &__points {
+        @include marginPaddingZero();
+
+        &--title {
+            color: $scoreText;
+            font-size: calc(8px + .4vw);
+        }
+
+        &--count {
+            text-align: center;
+            color: $darkText;
+            font-size: calc(10px + 5vw);
+        }
+    }
 }
 
-.title {
+/* .title {
     grid-area: title;
     justify-self: left;
     align-self: end;
@@ -28,9 +66,9 @@
     .logoImg {
         height: calc(20px + 6vw);
     }
-}
+} */
 
-.pointsContainer {
+/* .pointsContainer {
     grid-area: points;
     border-radius: 5px;
     justify-self: right;
@@ -58,6 +96,7 @@
     color: $darkText;
     font-size: calc(10px + 5vw);
 }
+/*
 
 /*=============================
           Media Queries 
@@ -67,9 +106,11 @@
     .header {
         margin: 10px 0;
         padding: 10px;
+
+        &__pointsContainer {
+            padding: 0px 20px 0 20px;
+        }
     }
 
-    .pointsContainer {
-        padding: 0px 20px 0 20px;
-    }
+    /* .pointsContainer {} */
 }

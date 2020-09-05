@@ -1,5 +1,7 @@
 LINK: https://piokl.github.io/Rock-Paper-Scissors-Game/
 
+Gra papier, kamień, nożyce z możliwością wybrania rozszerzonej wersji (papier, kamień, nożyce, jaszczurka, spock). Aplikacja działa na zasadzie wyboru gracza, a następnie losowego wyboru komputera. Czas wyboru przeciwnika AI jest celowo opóźniony, aby dać złudzenie jego "myślenia", w trakcie losowania wyboru występuje animacja.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
